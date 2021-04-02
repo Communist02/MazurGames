@@ -1,0 +1,137 @@
+@font-face {
+    font-family: Balsamiq;
+    src: url("../fonts/BalsamiqSans-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    color: white;
+    background-color: #121212;
+    font-family: Balsamiq, sans-serif;
+}
+
+.content {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 70px auto auto;
+    max-width: 1600px;
+}
+
+.promo {
+    display: flex;
+    align-items: center;
+}
+
+.promo-button {
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #252525;
+    padding: 5% 0;
+    border-radius: 3px;
+    border: 0;
+    color: gray;
+    font-size: xx-large;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.promo-button:hover {
+    background-color: #353535;
+    padding: 6% 0;
+}
+
+.promo-info {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: column-reverse;
+}
+
+.promo-info > img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.promo-text {
+    font-family: Balsamiq, sans-serif;
+    position: absolute;
+    margin-left: 30px;
+    color: white;
+    font-size: x-large;
+    text-shadow: 2px 2px 10px black;
+}
+
+.promo-text > p {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.catalog-name {
+    font-family: Balsamiq, sans-serif;
+    margin-left: 10px;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    width: 200px;
+    font-family: Balsamiq, sans-serif;
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    text-decoration: none;
+}
+
+.card:hover {
+    background-color: #252525;
+    outline: 2px white dashed;
+}
+
+.card > img {
+    width: 90%;
+    margin: 5%;
+    border-radius: 10px;
+}
+
+.card-text {
+    margin: 5%;
+}
+
+.card-text > .name {
+    margin-bottom: 3px;
+}
+
+.card-text > .publisher {
+    margin-top: 3px;
+    color: gray;
+}
+
+footer {
+    background-color: #252525;
+}
+
+footer > .footer {
+    margin: auto;
+    font-family: Balsamiq, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 1600px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media all and (max-width: 640px) {
+    .catalog {
+        justify-content: center;
+    }
+
+    .card {
+        flex: auto;
+    }
+}

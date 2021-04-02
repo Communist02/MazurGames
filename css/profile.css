@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Balsamiq;
+    src: url("../fonts/BalsamiqSans-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    color: white;
+    background-color: #121212;
+    font-family: Balsamiq, sans-serif;
+}
+
+.content {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 70px auto auto;
+    max-width: 1600px;
+}
+
+.form-product {
+    display: flex;
+    margin: 10px;
+}
+
+.profile-avatar {
+    width: 320px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.table-info {
+    margin-top: 20px;
+    margin-left: -20px;
+    color: white;
+    font-family: Balsamiq, sans-serif;
+    border-spacing: 20px 10px;
+    text-align: left;
+}
+
+.text-light {
+    font-size: small;
+}
+
+.form-info {
+    font-family: Balsamiq, sans-serif;
+    margin-left: 20px;
+    width: 100%;
+}
+
+#name-user {
+    margin-top: 0;
+    font-size: 50px;
+}
+
+#action {
+    display: flex;
+    align-items: center;
+}
+
+.action-button {
+    transition: 0.5s;
+    cursor: pointer;
+    color: black;
+    margin-right: 10px;
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 0;
+    font-family: Balsamiq, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.action-button:hover {
+    background-color: lightgray;
+}
+
+.edit {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0 auto;
+    max-width: 640px;
+}
+
+.edit > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit > * {
+    margin-bottom: 20px;
+    font-family: Balsamiq, sans-serif;
+}
+
+.input-form {
+    outline:none;
+    border: 0;
+    font-family: Balsamiq, sans-serif;
+    border-radius: 5px;
+    background-color: #252525;
+    color: white;
+    padding: 10px;
+}
+
+.update-status {
+    margin: 0;
+    font-size: large;
+}
+
+@media all and (max-width: 640px) {
+    .form-product {
+        flex-direction: column;
+        align-items: center;
+    }
+}

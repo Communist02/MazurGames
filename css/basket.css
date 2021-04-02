@@ -1,0 +1,162 @@
+font-face {
+    font-family: Balsamiq;
+    src: url("../fonts/BalsamiqSans-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    color: white;
+    background-color: #121212;
+    font-family: Balsamiq, sans-serif;
+}
+
+.content {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 70px auto auto;
+    max-width: 1600px;
+}
+
+.content > h2 {
+    font-size: xxx-large;
+    margin-top: 100px;
+}
+
+.form-basket {
+    display: flex;
+}
+
+.products {
+    width: 70%;
+}
+
+.product {
+    display: flex;
+    border-top: 2px white dashed;
+}
+
+.product > img {
+    width: 150px;
+    border-radius: 7px;
+    margin-right: 30px;
+}
+
+.product > * {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-info > h2 {
+    margin-top: 0;
+    font-size: xx-large;
+}
+
+.product-info > p {
+    font-size: x-large;
+}
+
+.product-count {
+    display: inline-block;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border: 2px white dashed;
+    border-radius: 5px;
+}
+
+.product-count > div {
+    display: inline-block;
+    font-size: x-large;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 30px;
+}
+
+.product-count > button {
+    transition: 0.3s;
+    display: inline-block;
+    color: white;
+    width: 40px;
+    border: 0;
+    background-color: transparent;
+    font-size: x-large;
+}
+
+.product-count > button:hover {
+    background-color: #252525;
+}
+
+.delete-button {
+    transition: 0.3s;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 9px;
+    border: 0;
+    font-family: Balsamiq, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.delete-button:hover {
+    background-color: lightgray;
+}
+
+.total {
+
+}
+
+.total-card {
+    position: fixed;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: black;
+    border: 2px white dashed;
+}
+
+.total-price {
+    display: flex;
+    font-size: xx-large;
+    justify-content: space-between;
+}
+
+.total-price > p {
+    margin: 0 0 20px;
+}
+
+.total-card > form > button {
+    transition: 0.5s;
+    cursor: pointer;
+    color: black;
+    background-color: orange;
+    padding: 7px 10px;
+    border-radius: 9px;
+    border: 0;
+    font-family: Balsamiq, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.total-card > form > button:hover {
+    background-color: red;
+}
+
+@media all and (max-width: 640px) {
+    .form-basket {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .products {
+        width: 100%;
+    }
+
+    .total-card {
+        margin-left: 0;
+        position: unset;
+    }
+}
