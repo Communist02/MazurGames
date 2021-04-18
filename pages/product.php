@@ -2,12 +2,14 @@
 <html lang="ru">
 
 <?php
-require 'blocks/header.php';
+require __DIR__ . '/../blocks/header.php';
 
 $product = '';
-if (array_key_exists('product', $_GET) && $_GET['product'] != '')
-    $product = getGameById($_GET['product']);
-else header('Location: index.php');
+$nameGame = explode('/', $_SERVER['REQUEST_URI']);
+$nameGame = $nameGame[count($nameGame) - 1];
+if (getGameById($nameGame) != null)
+    $product = getGameById($nameGame);
+else header('Location: ../');
 ?>
 
 <head>
@@ -15,14 +17,14 @@ else header('Location: index.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $product['name'] ?></title>
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="../css/product.css">
 </head>
 
 <body>
 <div class="content">
     <div class="form-product">
         <div class="form-image">
-            <img class="game-logo" src="<?= $product['cover'] ?>" alt="Обложка">
+            <img class="game-logo" src="<?= '../' . $product['cover'] ?>" alt="Обложка">
             <table class="table-info">
                 <tr>
                     <td class="text-light">Жанр</td>
@@ -83,6 +85,6 @@ else header('Location: index.php');
 </div>
 </body>
 
-<script src="js/toBasket.js"></script>
+<script src="../js/toBasket.js"></script>
 
 </html>

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="../css/registration.css">
 </head>
 
 <body>
-<?php include 'blocks/header.php'; ?>
+<?php require_once __DIR__ . '/../blocks/header.php'; ?>
 
 <div class="content">
     <h2>Регистрация нового пользователя</h2>
@@ -19,7 +19,7 @@
         проекта.</p>
     <p>В случае возникновения проблем с регистрацией, обратитесь к администратору сайта.</p>
 
-    <form action="php/check_registration.php" method="post">
+    <form action="../php/check_registration.php" method="post">
         <div>
             <label for="name">Никнейм</label>
             <input class="input-form" id="name" name="name" type="text">

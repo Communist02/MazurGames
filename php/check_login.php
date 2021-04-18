@@ -1,6 +1,6 @@
 <?php
 
-include "../php/functions.php";
+require_once __DIR__ . '/functions.php';
 
 $link = mysqli_connect('localhost', 'root', 'admin', 'mazurgames');
 
@@ -14,7 +14,7 @@ if ($nameCorrect) {
     if (password_verify($password, $user['password'])) {
         startSession();
         $_SESSION['uid'] = $user['id'];
-        header('Location: ../index.php');
-    } else header('Location: ../login.php?login=fail');
+        header('Location: ../');
+    } else header('Location: ../login?login=fail');
 } else
-    header('Location: ../login.php' . '?' . 'login=fail');
+    header('Location: ../login' . '?' . 'login=fail');

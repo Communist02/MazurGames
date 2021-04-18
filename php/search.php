@@ -1,6 +1,6 @@
 <?php
 
-require_once 'functions.php';
+require_once __DIR__ . '/functions.php';
 
 $link = db_link();
 
@@ -15,8 +15,8 @@ if ($games = mysqli_query($link, $search)) {
         $cover = $game['cover'];
         ?>
 
-        <a class="search-card" href="product.php?product=<?= $id ?>">
-            <img src="<?= $cover ?>" alt="Обложка">
+        <a class="search-card" href="product/<?= $id ?>">
+            <img src="<?= '../' . $cover ?>" alt="Обложка">
             <p><?= $name ?></p>
         </a>
 

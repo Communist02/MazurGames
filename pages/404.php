@@ -10,7 +10,6 @@
 </head>
 
 <body>
-<?php require_once 'blocks/header.php'; ?>
 
 <h1>404</h1>
 <h2>Страница не найдена</h2>

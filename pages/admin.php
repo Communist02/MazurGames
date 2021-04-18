@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MazurGames</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
 <?php
-require 'blocks/header.php';
+require_once __DIR__ . '/../blocks/header.php';
 
-if (!isset($_SESSION['uid']) || !admin($_SESSION['uid'])) header('Location: index.php');
+if (!isset($_SESSION['uid']) || !admin($_SESSION['uid'])) header('Location: home.php');
 
 if (array_key_exists('add', $_POST) || array_key_exists('change', $_POST)) {
     require 'php/editor_game.php';

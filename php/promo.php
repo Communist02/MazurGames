@@ -1,6 +1,6 @@
 <?php
 
-require_once 'functions.php';
+require_once __DIR__ . '/functions.php';
 
 $link = db_link();
 
@@ -20,8 +20,8 @@ if ($promo = mysqli_query($link, $all)) {
     ?>
 
     <button class="promo-button" onclick="left()">&lt;</button>
-    <a class="promo-info" href="product.php?product=<?= $id ?>">
-        <img src="<?= $image ?>" alt="">
+    <a class="promo-info" href="product/<?= $id ?>">
+        <img src="<?= '../' . $image ?>" alt="">
         <div class="promo-text">
             <h2><?= $name ?></h2>
             <p><?= $price ?> ₽</p>

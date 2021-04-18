@@ -6,24 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль</title>
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
-<?php include 'blocks/header.php';
+<?php require_once __DIR__ . '/../blocks/header.php';
 
-if (!isset($_SESSION['uid'])) header('Location: index.php');
+if (!isset($_SESSION['uid'])) header('Location: ../');
 
 if (array_key_exists('exit', $_GET)) {
     logout();
-    header('Location: index.php');
+    header('Location: ../');
 } else if (array_key_exists('admin', $_GET)) {
-    header('Location: admin.php');
+    header('Location: admin');
 }
 
 if (array_key_exists('cancel', $_POST)) {
-    header('Location: profile.php');
+    header('Location: profile');
 } else if (array_key_exists('save', $_POST)) {
-    include 'php/check_update.php';
+    include __DIR__ . '/../php/check_update.php';
 }
 
 ?>
@@ -31,7 +31,7 @@ if (array_key_exists('cancel', $_POST)) {
 <div class="content">
     <div class="form-product">
         <div>
-            <img class="profile-avatar" src="icons/person.svg" alt="">
+            <img class="profile-avatar" src="../icons/person.svg" alt="">
         </div>
 
         <div class="form-info">
@@ -63,7 +63,7 @@ if (array_key_exists('cancel', $_POST)) {
                     </tr>
                 </table>
                 ';
-            } else include 'php/editor_profile.php' ?>
+            } else include __DIR__ . '/../php/editor_profile.php' ?>
         </div>
     </div>
 </div>

@@ -5,6 +5,8 @@ $link = db_link();
 $jsonStr = file_get_contents('php://input');
 $basket = json_decode($jsonStr, TRUE);
 
+if (empty($basket)) return null;
+
 foreach ($basket as $id => $count) {
     if ($game = mysqli_query($link, "SELECT * FROM games WHERE id='$id'")) {
         $game = mysqli_fetch_assoc($game);
@@ -17,7 +19,7 @@ foreach ($basket as $id => $count) {
         ?>
 
         <div class="product">
-            <img src="<?= $cover ?>" alt="Обложка">
+            <img src="<?= '../' . $cover ?>" alt="Обложка">
             <div class="product-info">
                 <h2><?= $name ?></h2>
                 <p class="price-game"><?= $price ?> ₽</p>

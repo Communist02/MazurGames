@@ -1,6 +1,6 @@
 <?php
 
-require_once 'php/functions.php';
+require_once __DIR__ . '/functions.php';
 
 $link = db_link();
 

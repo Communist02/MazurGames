@@ -32,3 +32,9 @@ class Router
         return null; // Обход закончен и соответствия не найдено
     }
 }
+
+class Route
+{
+    public string $filepath; // Путь до файла, соответствующего маршруту
+    public array $params = []; // Динамческие части маршрута
+}

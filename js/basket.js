@@ -1,7 +1,7 @@
 function viewProducts() {
     let basket = localStorage.getItem('basket');
 
-    fetch('php/basket-products.php', {method: 'POST', body: basket}).then(res => {
+    fetch('../php/basket-products.php', {method: 'POST', body: basket}).then(res => {
         res.text().then(function (html) {
             document.querySelector('.products').innerHTML = html;
 

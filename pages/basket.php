@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
-    <link rel="stylesheet" href="css/basket.css">
+    <link rel="stylesheet" href="../css/basket.css">
 </head>
 
 <body>
-<?php require 'blocks/header.php'; ?>
+<?php require_once __DIR__ . '/../blocks/header.php'; ?>
 
 <div class="content">
     <h2>Корзина</h2>
@@ -34,6 +34,6 @@
 </div>
 </body>
 
-<script src="js/basket.js"></script>
+<script src="../js/basket.js"></script>
 
 </html>
