@@ -13,10 +13,10 @@
 <?php
 require_once __DIR__ . '/../blocks/header.php';
 
-if (!isset($_SESSION['uid']) || !admin($_SESSION['uid'])) header('Location: home.php');
+if (!isset($_SESSION['uid']) || !admin($_SESSION['uid'])) header('Location: ../home');
 
 if (array_key_exists('add', $_POST) || array_key_exists('change', $_POST)) {
-    require 'php/editor_game.php';
+    require __DIR__ . '/../php/editor_game.php';
     $_POST = [];
 }
 

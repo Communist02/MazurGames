@@ -1,5 +1,4 @@
 let index = 0;
-count = 2;
 
 function view() {
     fetch('../php/promo.php', {method: 'POST', body: index.toString()}).then(res => {
@@ -11,7 +10,7 @@ function view() {
 
 view();
 
-function right() {
+function right(count) {
     index++;
     if (index >= count) {
         index = 0;
@@ -19,7 +18,7 @@ function right() {
     view();
 }
 
-function left() {
+function left(count) {
     index--;
 
     if (index < 0) {

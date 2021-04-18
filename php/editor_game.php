@@ -38,12 +38,12 @@ if ($name == '') {
 if ($correct) {
     if (array_key_exists('add', $_POST)) {
         mysqli_query($link, "INSERT INTO games(id, name, genre, publisher, developer, platform, date, language, region, service, price, cover) values ('$id', '$name', '$genre', '$publisher', '$developer', '$platform', '$date', '$language', '$region', '$service', '$price', '$cover')");
-        header('Location: admin.php' . '?' . 'product=' . $id . '&add=success');
+        header('Location: ../admin' . '?' . 'product=' . $id . '&add=success');
     } else if (array_key_exists('change', $_POST)) {
         mysqli_query($link, "UPDATE games SET id = '$id', name = '$name', genre = '$genre', developer = '$developer', platform = '$platform', date = '$date', language = '$language', region = '$region', service = '$service', price = '$price', cover = '$cover' WHERE id = '$first_id'");
-        header('Location: admin.php' . '?' . 'product=' . $id . '&change=success');
+        header('Location: ../admin' . '?' . 'product=' . $id . '&change=success');
     }
 } else {
     echo 'id и имя не могут быть пустыми';
-    header('Location: admin.php' . '?' . 'editor=fail');
+    header('Location: ../admin' . '?' . 'editor=fail');
 }
