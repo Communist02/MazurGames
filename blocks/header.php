@@ -14,21 +14,21 @@
         startSession();
 
         if (isset($_SESSION['uid'])) { ?>
-            <a class="user" href="profile">
+            <a class="user" href="../profile">
                 <img class="avatar" src="../icons/person.svg" alt="Логин">
                 <p><?= getUserById($_SESSION['uid'])['name'] ?></p>
             </a>
             <?php
         } else { ?>
-            <form action="login">
+            <form action="../login">
                 <button>Вход</button>
             </form>
-            <form action="registration">
+            <form action="../registration">
                 <button class="registration-button">Регистрация</button>
             </form>
             <?php
         } ?>
-        <a class="user" href="basket">
+        <a class="user" href="../basket">
             <img class="avatar" src="../icons/basket.svg" alt="Корзина">
         </a>
     </div>

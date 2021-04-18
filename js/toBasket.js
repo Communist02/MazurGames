@@ -1,5 +1,4 @@
-function toBasket() {
-    let id = new URL(document.location).searchParams.get('product');
+function toBasket(id) {
     let basket = JSON.parse(localStorage.getItem('basket'));
     if (basket == null) {
         basket = {};

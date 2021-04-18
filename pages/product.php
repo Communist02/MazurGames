@@ -57,12 +57,12 @@ else header('Location: ../');
                 </li>
             </ul>
             <div id="purchase">
-                <button onclick="toBasket()">В корзину</button>
+                <button onclick="toBasket('<?= $product['id'] ?>')">В корзину</button>
                 <p id="price"><?= $product['price'] ?> ₽</p>
             </div>
 
             <?php if (isset($_SESSION['uid']) && admin($_SESSION['uid'])) { ?>
-                <form action="admin.php" method="get">
+                <form action="../admin" method="get">
                     <button class="edit" name="product" value="<?= $product['id'] ?>">Редактировать</button>
                 </form>
             <?php } ?>

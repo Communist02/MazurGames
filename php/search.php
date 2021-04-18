@@ -15,7 +15,7 @@ if ($games = mysqli_query($link, $search)) {
         $cover = $game['cover'];
         ?>
 
-        <a class="search-card" href="product/<?= $id ?>">
+        <a class="search-card" href="../product/<?= $id ?>">
             <img src="<?= '../' . $cover ?>" alt="Обложка">
             <p><?= $name ?></p>
         </a>
