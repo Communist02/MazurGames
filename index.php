@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MazurGames</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
+ini_set('display_errors', '1'); // Установка значения конфигурации PHP для отображения ошибок на экране
 
-<body>
-<?php require_once 'blocks/header.php'; ?>
+require_once './php/route.php'; // Подключение файла с классом
+require_once './php/router.php';
 
-<div class="content">
-    <div class="promo">
+$routesConfig = include './routes-config.php'; // Подключение этого файла с присвоением, вернет массив
+$uri = $_SERVER['REQUEST_URI']; // Про REQUEST_URI https://www.php.net/manual/ru/reserved.variables.server.php
 
-    </div>
+$router = new Router($routesConfig); // Создание объекта класса Router
+$route = $router->match($uri); // Получение текущего роута (машрута)
 
-    <h2 class="catalog-name">Каталог</h2>
-    <div class="catalog">
-        <?php include 'php/catalog.php' ?>
-    </div>
-</div>
+if ($route) {
+    $filepath = $route->filepath;
+    $status = 200; // OK
+} else {
+    $filepath = __DIR__ . '/404.php'; // Если маршрут не удалось найти, тогда страница со статусом 404
+    $status = 404; // Not found
+}
 
-<!--<footer>-->
-<!--    <div class="footer">-->
-<!--        <p>© 2021 MazurGames</p>-->
-<!--        <a>О магазине</a>-->
-<!--        <a>Оплата и доставка</a>-->
-<!--        <a>Гарантия возврата</a>-->
-<!--    </div>-->
-<!--</footer>-->
-<!--</body>-->
+http_response_code($status); // Отправляем в ответе HTTP статус код.
 
-<script src="js/promo.js"></script>
-
-</html>
+require_once $filepath; // Подключаем файл
