@@ -15,6 +15,7 @@ if ($nameCorrect) {
         startSession();
         $_SESSION['uid'] = $user['id'];
         header('Location: ../');
-    } else header('Location: ../login?login=fail');
+    } else
+        header('Location: ../login?login=fail');
 } else
     header('Location: ../login' . '?' . 'login=fail');

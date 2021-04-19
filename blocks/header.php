@@ -20,12 +20,8 @@
             </a>
             <?php
         } else { ?>
-            <form action="../login">
-                <button>Вход</button>
-            </form>
-            <form action="../registration">
-                <button class="registration-button">Регистрация</button>
-            </form>
+                <a class="button-text" href="../login">Вход</a>
+                <a class="button-text registration-button" href="../registration">Регистрация</a>
             <?php
         } ?>
         <a class="user" href="../basket">

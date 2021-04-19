@@ -1,7 +1,7 @@
 <form method="post">
-    <div id="action">
+    <div class="action">
         <button name="save" class="action-button">Сохранить</button>
-        <button name="cancel" class="action-button">Отмена</button>
+        <a class="action-button" href="../profile">Отмена</a>
         <?php
         if (array_key_exists('update', $_GET) && $_GET['update'] == 'success') {
             echo '<p class="update-status" style="color: lightgreen">Изменения сохранены!</p>';

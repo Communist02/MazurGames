@@ -52,13 +52,14 @@ body {
     font-size: 50px;
 }
 
-#action {
+.action {
     display: flex;
     align-items: center;
 }
 
 .action-button {
     transition: 0.5s;
+    text-decoration: none;
     cursor: pointer;
     color: black;
     margin-right: 10px;
