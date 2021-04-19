@@ -4,7 +4,7 @@
         <img src="../icons/game.svg" alt="">
         <div>MazurGames</div>
     </a>
-    <a class="header-small" href="">MG</a>
+    <a class="header-small" href="../">MG</a>
     <div class="header-end">
         <div class="search">
             <img src="../icons/loupe.svg" alt="">
