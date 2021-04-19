@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ . '/php/functions.php';
+startSession();
+
 ini_set('display_errors', '1'); // Установка значения конфигурации PHP для отображения ошибок на экране
 
 require_once './router.php'; // Подключение файла с классами

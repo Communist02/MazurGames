@@ -8,20 +8,27 @@
     <title>Профиль</title>
     <link rel="stylesheet" href="../css/profile.css">
 </head>
+
 <body>
 <?php require_once __DIR__ . '/../blocks/header.php';
 
-if (!isset($_SESSION['uid'])) header('Location: ../');
+if (!isset($_SESSION['uid'])){
+    header('Location: ../login');
+    die();
+}
 
 if (array_key_exists('exit', $_GET)) {
     logout();
-    header('Location: ../');
+    header('Location: ../login');
+    die();
 } else if (array_key_exists('admin', $_GET)) {
-    header('Location: admin');
+    header('Location: ../admin');
+    die();
 }
 
 if (array_key_exists('cancel', $_POST)) {
-    header('Location: profile');
+    header('Location: ../profile');
+    die();
 } else if (array_key_exists('save', $_POST)) {
     include __DIR__ . '/../php/check_update.php';
 }
@@ -44,26 +51,25 @@ if (array_key_exists('cancel', $_POST)) {
                     </p>
                 </li>
             </ul>
-            <?php if (!array_key_exists('edit', $_GET)) {
-                echo '
+            <?php if (!array_key_exists('edit', $_GET)) { ?>
                 <form id="action">
                     <button name="edit" class="action-button">Редактировать</button>
-                    <button name="exit" class="action-button">Выйти</button>';
-                if (admin($_SESSION['uid'])) {
-                    echo '<button name="admin" class="action-button">Админка</button>';
-                }
-                echo '</form>
+                    <button name="exit" class="action-button">Выйти</button>
+                    <?php if (admin($_SESSION['uid'])) {
+                        echo '<button name="admin" class="action-button">Админка</button>';
+                    } ?>
+                </form>
                 <table class="table-info">
                     <tr>
                         <td class="text-light">Электронная почта</td>
                     </tr>
-    
+
                     <tr>
-                        <th>' . getUserById($_SESSION['uid'])['email'] . '</th>
+                        <th><?= getUserById($_SESSION['uid'])['email'] ?></th>
                     </tr>
                 </table>
-                ';
-            } else include __DIR__ . '/../php/editor_profile.php' ?>
+                <?php
+            } else require __DIR__ . '/../php/editor_profile.php' ?>
         </div>
     </div>
 </div>

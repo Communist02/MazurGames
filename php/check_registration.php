@@ -52,11 +52,11 @@ if ($correct) {
 
     $_SESSION['uid'] = getUserByName($name)['id'];
     //echo "<h2>Регистрация прошла успешно!</h2>";
-    header('Location: ../registration.php' . '?' . 'registration=success');
+    header('Location: ../registration' . '?' . 'registration=success');
 } else {
     $postStr = "";
     foreach ($post as $key => $value) {
         $postStr .= $key . '=' . $value . '&';
     }
-    header('Location: ../registration.php' . '?' . $postStr);
+    header('Location: ../registration' . '?' . $postStr);
 }

@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/functions.php';
 
-$link = mysqli_connect('localhost', 'root', 'admin', 'mazurgames');
+$link = db_link();
 
 $name = trim($_POST['name']);
 $password = trim($_POST['password']);

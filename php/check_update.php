@@ -60,12 +60,12 @@ if ($correct) {
         if ($user['email'] != $email) {
             mysqli_query($link, "UPDATE users SET email = '$email' where id = '$id'");
         }
-        header('Location: profile.php' . '?' . 'edit=' . '&' . 'update=success');
-    } else header('Location: profile.php' . '?' . 'edit=' . '&' . 'update=none');
+        header('Location: ../profile' . '?' . 'edit=' . '&' . 'update=success');
+    } else header('Location: ../profile' . '?' . 'edit=' . '&' . 'update=none');
 } else {
     $postStr = "";
     foreach ($post as $key => $value) {
         $postStr .= '&' . $key . '=' . $value;
     }
-    header('Location: profile.php' . '?'. 'edit=&update=fail' . $postStr);
+    header('Location: ../profile' . '?'. 'edit=&update=fail' . $postStr);
 }
