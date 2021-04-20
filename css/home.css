@@ -61,9 +61,14 @@ body {
     text-shadow: 2px 2px 10px black;
 }
 
+.promo-text > h2 {
+    margin-bottom: 10px;
+}
+
 .promo-text > p {
     font-size: xx-large;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .catalog-name {
@@ -133,5 +138,18 @@ footer > .footer {
 
     .card {
         flex: auto;
+    }
+
+    .promo-text {
+        font-size: medium;
+    }
+
+    .promo-text > h2 {
+        margin-bottom: 8px;
+    }
+
+    .promo-text > p {
+        font-size: large;
+        margin-top: 8px;
     }
 }

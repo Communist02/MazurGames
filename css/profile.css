@@ -55,6 +55,7 @@ body {
 .action {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .action-button {
@@ -63,6 +64,7 @@ body {
     cursor: pointer;
     color: black;
     margin-right: 10px;
+    margin-bottom: 10px;
     background-color: white;
     padding: 7px 10px;
     border-radius: 10px;
